@@ -38,6 +38,7 @@ jobs:
       - name: Send Telegram Notification
         run: |
           MONTH=$(date +'%m' | sed 's/^0*//')월
+          MESSAGE="📮 ${MONTH}의 Naver/FeNews가 방금 도착했어요. 조용히 살펴보러 가볼까요?"
           curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
-          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-          -d text="📮 ${MONTH}의 Naver/FeNews가 방금 도착했어요!\n\n살펴보러 갈까요?"
+            -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            -d text="$MESSAGE"
