@@ -1,4 +1,4 @@
-name: Sync Fork with Upstream
+name: Sync and Summarize FE News
 
 on:
   schedule:
@@ -52,3 +52,28 @@ jobs:
                 ]]
               }
             }'
+
+  summarize:
+    runs-on: ubuntu-latest
+    needs: sync  # sync 완료 후 실행
+    steps:
+      - name: Get current year and month
+        run: echo "YEAR_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+
+      - name: Download FE News issue markdown
+        run: |
+          curl -s "https://raw.githubusercontent.com/naver/fe-news/master/issues/${YEAR_MONTH}.md" -o news.md
+
+      - name: Extract top 5 items
+        run: |
+          grep '^-' news.md | head -n 5 > summary.txt
+
+      - name: Send Telegram Summary
+        run: |
+          MONTH=$(date +'%m' | sed 's/^0*//')월
+          SUMMARY=$(cat summary.txt)
+          MESSAGE="📰 ${MONTH} FE News 요약\n\n${SUMMARY}\n\n🔗 전체 보기: https://github.com/naver/fe-news/blob/master/issues/${YEAR_MONTH}.md"
+
+          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
+            --data-urlencode chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            --data-urlencode text="$MESSAGE"
