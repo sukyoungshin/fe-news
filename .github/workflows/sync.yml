@@ -54,7 +54,14 @@ jobs:
         run: |
           MONTH=$(date +'%m' | sed 's/^0*//')월
           SUMMARY=$(cat summary.txt)
-          MESSAGE="📰 ${MONTH} FE News 요약\n\n${SUMMARY}\n\n🔗 전체 보기: https://github.com/sukyoungshin/fe-news/blob/master/issues/${YEAR_MONTH}.md"
+
+          # 첫 번째 메시지: "방금 도착했어요!"
+          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
+            --data-urlencode "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            --data-urlencode "text=📮 ${MONTH}의 Naver/FeNews가 방금 도착했어요!"
+
+          # 두 번째 메시지: 요약 내용 (줄바꿈은 \n 사용)
+          MESSAGE="📰 ${MONTH} FE News 요약\n\n${SUMMARY}\n\n🔗 전체 보기: https://github.com/naver/fe-news/blob/master/issues/${YEAR_MONTH}.md"
 
           curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
             --data-urlencode "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
