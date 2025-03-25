@@ -57,5 +57,5 @@ jobs:
           MESSAGE="📰 ${MONTH} FE News 요약\n\n${SUMMARY}\n\n🔗 전체 보기: https://github.com/sukyoungshin/fe-news/blob/master/issues/${YEAR_MONTH}.md"
 
           curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
-            --data-urlencode chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-            --data-urlencode text=\"$MESSAGE\"
+            --data-urlencode "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            --data-urlencode "text=$MESSAGE"
