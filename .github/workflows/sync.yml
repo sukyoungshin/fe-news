@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          fetch-depth: 0  # merge를 위해 전체 히스토리 필요
 
       - name: Set up Git
         run: |
@@ -23,6 +24,10 @@ jobs:
         run: |
           git remote | grep upstream || git remote add upstream https://github.com/naver/fe-news
           git fetch upstream
+
+      - name: 💥 기존 이슈 파일 삭제로 merge conflict 방지
+        run: |
+          rm -f issues/*.md || true
 
       - name: Merge upstream changes
         run: |
