@@ -46,6 +46,7 @@ FE News는 네이버 FE 엔지니어들이 엄선한 양질의 `FE 및 주요한
 
 ### 2026
 
+- [2026-07](/issues/2026-07.md)
 - [2026-06](/issues/2026-06.md)
 - [2026-05](/issues/2026-05.md)
 - [2026-04](/issues/2026-04.md)
@@ -161,9 +162,9 @@ FE News는 네이버 FE 엔지니어들이 엄선한 양질의 `FE 및 주요한
 
 ## 🧑🏻‍💻 Team
 
-[![Jae Sung Park](https://avatars.githubusercontent.com/u/2178435?s=150&v=4)](https://github.com/netil) | [![DonBum Ham](https://avatars.githubusercontent.com/u/5152681?s=150&v=4)](https://github.com/silveracy) | [![Inkyu Oh](https://avatars.githubusercontent.com/u/13645032?s=150&v=4)](https://github.com/gomjellie) | [![Inseo Hwang](https://avatars.githubusercontent.com/u/24623403?s=150&v=4)](https://github.com/sjsjsj1246)
-:---:|:---:|:---:|:---:
-[Jae Sung Park](https://github.com/netil) | [DonBum Ham](https://github.com/silveracy) | [Inkyu Oh](https://github.com/gomjellie) | [Inseo Hwang](https://github.com/sjsjsj1246) 
+| [![Jae Sung Park](https://avatars.githubusercontent.com/u/2178435?s=150&v=4)](https://github.com/netil) | [![DonBum Ham](https://avatars.githubusercontent.com/u/5152681?s=150&v=4)](https://github.com/silveracy) | [![Inkyu Oh](https://avatars.githubusercontent.com/u/13645032?s=150&v=4)](https://github.com/gomjellie) | [![Inseo Hwang](https://avatars.githubusercontent.com/u/24623403?s=150&v=4)](https://github.com/sjsjsj1246) |
+| :-----------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+|                                [Jae Sung Park](https://github.com/netil)                                |                                [DonBum Ham](https://github.com/silveracy)                                |                                [Inkyu Oh](https://github.com/gomjellie)                                 |                                [Inseo Hwang](https://github.com/sjsjsj1246)                                 |
 
 ## 😎 Contributors
 
